@@ -9,12 +9,19 @@ namespace treinamento_poo.Service
     public class ContaCorrenteService
     {
         ContaCorrente conta1 = new ContaCorrente()
-            {
+        {
                 Titular = "Julio Cesar",
                 Agencia = 102,
                 Numero = 25555,
                 Saldo = 500.52
-            };
+        };
+        ContaCorrente conta2 = new ContaCorrente()
+        {
+                Titular = "Carlos Magno",
+                Agencia = 405,
+                Numero = 2065,
+                Saldo = 8500.52
+        };
             /*
             Console.WriteLine($" ------- Dados da Conta Corrente -------");
             Console.WriteLine($"Titular: {conta1.Titular}");
@@ -47,11 +54,16 @@ namespace treinamento_poo.Service
 
         public void OperacaoTransferencia()
         {
+            Console.WriteLine();
             Console.WriteLine("Digite seu nome: " + "\n");
             var nome = Console.ReadLine();
             Console.WriteLine("Informe um valor que deseja transferir: " + "\n");
-
+            var valor = double.Parse(Console.ReadLine());
             // implemente a ação transferir aqui e exiba as informações para o usuário
+            Transferir(valor,conta2.Saldo,conta1);
+            Console.WriteLine($"Titular da conta origem: {conta2.Titular}" + "\n");
+            Console.WriteLine($"Titular da conta destino: {conta1.Titular}" + "\n");
+            Console.WriteLine($"Valor depositado: {valor.ToString("C")}" + "\n");
         }
 
         // criar os métodos Sacar, Depositar e Transferir como private
@@ -59,6 +71,7 @@ namespace treinamento_poo.Service
         {
            if(valor>saldo)
            {
+               Console.WriteLine();
                Console.WriteLine("Não foi possível concluir a transação. Seu saldo é inferior ao valor do saque!");
            }
            else{
@@ -71,8 +84,24 @@ namespace treinamento_poo.Service
         private void Depositar( double valor, double saldo )
         {
                saldo=saldo+valor;
+               Console.WriteLine();
                Console.WriteLine("Operação realizada com sucesso!\n");
                Console.WriteLine($"Novo saldo: {saldo.ToString("C")}\n");
+
+        }
+        private void Transferir( double valor, double saldo, ContaCorrente contaDestino )
+        {
+            if(valor>saldo)
+            {
+               Console.WriteLine();
+               Console.WriteLine("Não foi possível concluir a transação. Seu saldo é inferior ao valor que deseja transferir!");
+            }
+            else{
+               saldo=saldo-valor;
+               Console.WriteLine();
+               Console.WriteLine("Operação realizada com sucesso!\n");
+               Console.WriteLine($"Novo saldo Conta origem: {saldo.ToString("C")}\n");
+            }
 
         }
 

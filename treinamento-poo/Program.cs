@@ -15,7 +15,7 @@ namespace treinamento_poo
             Console.WriteLine();
             Console.WriteLine("1 - Depósito");
             Console.WriteLine("2 - Saque");
-            Console.WriteLine("3 - Transferência");
+            Console.WriteLine("3 - Transferência \n");
 
             // obtem a opção selecionada pelo usuário
             var opcao = Console.ReadKey();
