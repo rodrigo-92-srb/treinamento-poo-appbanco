@@ -30,8 +30,8 @@ namespace treinamento_poo.Service
             var nome = Console.ReadLine();
             Console.WriteLine("Informe um valor que deseja sacar: " + "\n");
             var valor = double.Parse(Console.ReadLine());
+            // implemente a ação sacar aqui e exiba as informações para o usuário...
             Sacar(valor,conta1.Saldo);
-            // mplemente a ação sacar aqui e exiba as informações para o usuário...
         }
 
         public void OperacaoDeposito()
@@ -40,9 +40,9 @@ namespace treinamento_poo.Service
             Console.WriteLine("Digite seu nome: " + "\n");
             var nome = Console.ReadLine();
             Console.WriteLine("Informe um valor que deseja depositar: " + "\n");
-
-
+            var valor = double.Parse(Console.ReadLine());
             // implemente a ação depositar aqui e exiba as informações para o usuário...
+            Depositar(valor,conta1.Saldo);
         }
 
         public void OperacaoTransferencia()
@@ -61,6 +61,18 @@ namespace treinamento_poo.Service
            {
                Console.WriteLine("Não foi possível concluir a transação. Seu saldo é inferior ao valor do saque!");
            }
+           else{
+               saldo=saldo-valor;
+               Console.WriteLine("Operação realizada com sucesso!\n");
+               Console.WriteLine($"Novo saldo: {saldo.ToString("C")}\n");
+           }
+
+        }
+        private void Depositar( double valor, double saldo )
+        {
+               saldo=saldo+valor;
+               Console.WriteLine("Operação realizada com sucesso!\n");
+               Console.WriteLine($"Novo saldo: {saldo.ToString("C")}\n");
 
         }
 
