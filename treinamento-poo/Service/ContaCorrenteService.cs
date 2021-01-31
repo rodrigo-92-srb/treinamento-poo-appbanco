@@ -33,8 +33,7 @@ namespace treinamento_poo.Service
         public void OperacaoSaque()
         {
             Console.WriteLine();
-            Console.WriteLine("Digite seu nome: " + "\n");
-            var nome = Console.ReadLine();
+            Console.WriteLine($"Nome: {conta1.Titular}" + "\n");
             Console.WriteLine("Informe um valor que deseja sacar: " + "\n");
             var valor = double.Parse(Console.ReadLine());
             // implemente a ação sacar aqui e exiba as informações para o usuário...
@@ -44,8 +43,7 @@ namespace treinamento_poo.Service
         public void OperacaoDeposito()
         {
             Console.WriteLine();
-            Console.WriteLine("Digite seu nome: " + "\n");
-            var nome = Console.ReadLine();
+            Console.WriteLine($"Nome: {conta1.Titular}");
             Console.WriteLine("Informe um valor que deseja depositar: " + "\n");
             var valor = double.Parse(Console.ReadLine());
             // implemente a ação depositar aqui e exiba as informações para o usuário...
@@ -55,8 +53,7 @@ namespace treinamento_poo.Service
         public void OperacaoTransferencia()
         {
             Console.WriteLine();
-            Console.WriteLine("Digite seu nome: " + "\n");
-            var nome = Console.ReadLine();
+            Console.WriteLine($"Nome: {conta2.Titular}");
             Console.WriteLine("Informe um valor que deseja transferir: " + "\n");
             var valor = double.Parse(Console.ReadLine());
             // implemente a ação transferir aqui e exiba as informações para o usuário
