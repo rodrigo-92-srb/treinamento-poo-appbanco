@@ -1,6 +1,6 @@
 ﻿using System;
-using System;
 using treinamento_poo.Service;
+using treinamento_poo.Model;
 
 namespace treinamento_poo
 {
@@ -8,6 +8,7 @@ namespace treinamento_poo
     {
         static void Main(string[] args)
         {
+            
             // Exibe menu de opções para o usuário selecionar
 
             Console.WriteLine(" ..:: Selecione uma opção ::..");
